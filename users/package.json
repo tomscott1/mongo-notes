@@ -1,0 +1,24 @@
+{
+  "name": "users",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon --exec 'mocha -R min'",
+    "es6-test": "npm run compile && nodemon --exec 'mocha -R --compilers js:babel-core/register min'",
+    "test2": "npm run compile && mocha --compilers js:babel-core/register",
+    "compile": "rm -rf lib && babel --presets es2015 -d lib/ src/"
+  },
+  "author": "Tom Scott",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^3.2.0",
+    "mongoose": "^4.7.7",
+    "nodemon": "^1.11.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.22.1",
+    "babel-preset-es2015": "^6.22.0"
+  }
+}
