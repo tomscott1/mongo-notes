@@ -29,7 +29,7 @@ describe('Updating records', () => {
 
   it('instance with update function', (done) => {
     assertName(joe.update({ name: 'Alex' }), done);
-    done();
+
   });
 
   it('a model class can update', (done) => {
