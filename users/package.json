@@ -6,7 +6,6 @@
   "scripts": {
     "test": "nodemon --exec 'mocha -R min'",
     "es6-test": "npm run compile && nodemon --exec 'mocha -R --compilers js:babel-core/register min'",
-    "test2": "npm run compile && mocha --compilers js:babel-core/register",
     "compile": "rm -rf lib && babel --presets es2015 -d lib/ src/"
   },
   "author": "Tom Scott",
