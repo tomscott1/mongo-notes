@@ -24,10 +24,15 @@ UserSchema.virtual('postCount').get(function() {
   return this.posts.length;
 });
 
-// UserSchema.pre('remove', function () {
-//   // this === model instance (i.e joe)
-//   const BlogPost = mongoose.model('blogPost');
-// });
+// middleware for removing a record
+UserSchema.pre('remove', function (next) {
+  // this === model instance (i.e joe)
+  const BlogPost = mongoose.model('blogPost');
+
+  BlogPost.remove({ _id: { $in: this.blogPosts } })
+    .then(() => next());
+
+});
 
 const User = mongoose.model('user', UserSchema);
 
