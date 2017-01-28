@@ -1,5 +1,3 @@
-'use strict'
-
 const mongoose = require('mongoose') // use ES6 import mongoose from ('mongoose')
 
 mongoose.Promise = global.Promise;  // mongoose promise library is deprecated
